@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <AssemblyName>DysonSphereProgram.Modding.StarterTemplate</AssemblyName>
-    <Product>My first plugin</Product>
-    <Version>1.0.0</Version>
+    <AssemblyName>SwizzlesDarkStormExpansion</AssemblyName>
+    <Product>Swizzle's Dark Storm Expansion</Product>
+    <Version>0.0.1</Version>
+	  <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <RestoreAdditionalProjectSources>
@@ -12,15 +13,18 @@
       https://nuget.bepinex.dev/v3/index.json;
       https://nuget.samboy.dev/v3/index.json
     </RestoreAdditionalProjectSources>
-    <RootNamespace>DysonSphereProgram.Modding.StarterTemplate</RootNamespace>
+    <RootNamespace>DysonSphereProgram.Modding.SwizzlesDarkStormExpansion</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
     <PackageReference Include="BepInEx.Core" Version="5.*" />
-    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
     <PackageReference Include="UnityEngine.Modules" Version="2018.4.12" IncludeAssets="compile" />
     <PackageReference Include="DysonSphereProgram.GameLibs" Version="*-*" IncludeAssets="compile" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.AutoPlugin" Version="1.*" PrivateAssets="all" />
+    <PackageReference Include="DysonSphereProgram.Modding.CommonAPI" Version="1.5.4" IncludeAssets="compile" PrivateAssets="all" />
+    <PackageReference Include="DysonSphereProgram.Modding.LDBTool" Version="3.0.0" />
+    <PackageReference Include="DysonSphereProgram.Modding.DSPModSave" Version="1.2.0" />
   </ItemGroup>
   
   <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
