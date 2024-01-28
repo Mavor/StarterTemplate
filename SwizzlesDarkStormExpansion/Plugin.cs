@@ -4,6 +4,7 @@ using BepInEx.Logging;
 using CommonAPI.Systems;
 using CommonAPI;
 using HarmonyLib;
+using System;
 
 namespace DysonSphereProgram.Modding.SwizzlesDarkStormExpansion;
 
@@ -14,14 +15,17 @@ namespace DysonSphereProgram.Modding.SwizzlesDarkStormExpansion;
 [CommonAPISubmoduleDependency(nameof(ProtoRegistry), nameof(CustomKeyBindSystem))]
 public partial class Plugin : BaseUnityPlugin
 {
-    internal new static ManualLogSource Logger;
-        
+    internal static ManualLogSource Log;
+    private Harmony _harmony;
+
     private void Awake()
     {
-        // Plugin startup logic
-        Logger = base.Logger;
-        //Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} is loaded!");
-        Logger.LogInfo($"Plugin wonkytonk is loaded!");
+        Plugin.Log = Logger;
+        _harmony = new Harmony(Plugin.Id);
+        _harmony.PatchAll(typeof(EnemyRescalingPatch));
+        _harmony.PatchAll(typeof(VegRescalingPatch));
+        Logger.LogInfo($"Plugin Swizzle's Dark Storm Expansion has been loaded.");
+
 
         // Load Harmony patches in this assembly
         Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly());
