@@ -11,7 +11,7 @@ namespace DysonSphereProgram.Modding.SwizzlesDarkStormExpansion
         {
             foreach (var veg in LDB.veges.dataArray)
             {
-                Plugin.Log.LogInfo("Modifying a veg with ID: " + veg.ID);
+                //Plugin.Log.LogInfo("Modifying a veg with ID: " + veg.ID);
                 VegRescaling.Apply(veg.ID, new Vector3(0.6f, 0.6f, 0.6f), new Vector3(0.6f, 0.6f, 0.6f));
             }
 

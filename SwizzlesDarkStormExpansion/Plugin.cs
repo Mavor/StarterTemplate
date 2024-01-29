@@ -24,7 +24,7 @@ public partial class Plugin : BaseUnityPlugin
         _harmony = new Harmony(Plugin.Id);
         _harmony.PatchAll(typeof(EnemyRescalingPatch));
         _harmony.PatchAll(typeof(VegRescalingPatch));
-        Logger.LogInfo($"Plugin Swizzle's Dark Storm Expansion has been loaded.");
+        Logger.LogInfo($"Swizzle's Dark Storm Expansion has been loaded. Welcome to the tempest.");
 
 
         // Load Harmony patches in this assembly
